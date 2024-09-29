@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { userLogin } from './models/userLogin';
-import { FormsModule } from '@angular/forms';
-import { FoccoService } from './services/focco.service';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, LoginComponent, RegisterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Focco_Angular';
 
-  constructor(private foccoService: FoccoService) { }
+/*   constructor(private foccoService: FoccoService) { }
 
   userLogin = new userLogin();
 
@@ -33,5 +32,5 @@ export class AppComponent {
 
   logout(){
     this.foccoService.logout();
-  }
+  } */
 }

@@ -1,0 +1,162 @@
+/* Reseta margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.todo-conteudo{
+    height: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.sub-content {
+    width: 40%;
+}
+
+.title-welcome {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.775rem;
+    margin: 10px;
+}
+
+.subtitle-welcome {
+    color: #5D6065;
+    text-align: center;
+    margin-bottom: 5.313rem;
+    font-size: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 3.488rem;
+}
+
+.input-group input {
+    all: unset;
+    color: white;
+    background-color: #222222;
+    height: 3.90rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.input-group > input{
+    padding-left: 25px;
+}
+
+.input-group input:focus {
+    border: 1px solid #61C787;
+    outline: none;
+    z-index: 1;
+}
+
+.input-group input::placeholder {
+    color: #676767; 
+    opacity: 1; 
+}
+
+/* botoes */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.actions button {
+    all: unset; 
+    display: block;
+    padding: 0px 15px; 
+    background: rgb(0,194,153);
+    background: linear-gradient(90deg, rgba(0,194,153,1) 0%, rgba(97,199,135,1) 56%, rgba(226,205,113,1) 100%);
+    color: black; 
+    font-weight: bold;
+    text-align: left; 
+    border-radius: 5px;
+    height: 3.90rem;
+    cursor: pointer;
+    width: 92%;
+}
+
+.actions p {
+    margin: 0;
+}
+
+.text-account{
+    display: flex;
+    align-items: start;
+    justify-content:start;
+    margin-bottom: 1.5rem;
+    color: #676767;
+}
+
+.text-account > div > p > span{
+    color: #00C299;
+    cursor: pointer;
+}
+
+.social-register {
+    display: flex;
+    gap: 10px;
+    height: 3.9rem;
+}
+
+.social-register button {
+    padding: 10px;
+    font-size: 0.8rem;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+
+    padding: 20px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(0,194,153,1), rgba(226,205,113,1)) 1; /* Aplica o gradiente como imagem da borda */
+    border-radius: 5px;
+    background-color: #181B20;
+    
+}
+
+.arrow-style{
+    background-color: transparent;
+    text-align: right; 
+    padding-left: 150px;
+}
+
+.github-style{
+    padding-right: 10px;
+}
+.google-style{
+    padding-right: 10px;
+}
+/* Responsivo: ajusta os elementos para telas menores */
+@media (max-width: 768px) {
+    .sub-content {
+        width: 70%;
+    }
+
+    .title-welcome{
+        font-size: 2.575rem;
+    }
+}
