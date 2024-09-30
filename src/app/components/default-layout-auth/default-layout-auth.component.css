@@ -16,35 +16,69 @@ section{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-grow: 0.8;
+    flex-grow: 1;
 }
 
-.form-section > h1{
+.form-section > .container-form{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-section > .container-form >  h1{
     font-weight: bold;
     color: white;
     padding: 0px 25px;
 }
 
-.form-section > button{
-    width: 40%;
-    border-radius: 3px;
+.form-section > .container-form > button{
+    all: unset; 
+    padding-left: 20px;
+    background: rgb(0,194,153);
+    background: linear-gradient(90deg, rgba(0,194,153,1) 0%, rgba(97,199,135,1) 56%, rgba(226,205,113,1) 100%);
+    color: black; 
     font-weight: bold;
-    border: none;
-    background-color: greenyellow;
-    padding: 19px 0px;
+    text-align: left; 
+    height: 3.90rem;
     cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.form-section > .auth-apps{
+.form-section > .container-form > button > i{
+    margin-right: 15px;
+}
+
+.form-section > .container-form > .auth-apps{
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 100%;
 }
-.form-section > .auth-apps > button{
+.form-section > .container-form > .auth-apps > button{
+    margin-top: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 45%;
-}
+    color: white;
+    height: 3.90rem;
+    border-style: none;
+    font-size: 11px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(0,194,153,1), rgba(226,205,113,1)) 1; 
 
+}
+.form-section > .container-form > .auth-apps > button > i{
+   font-size: 23px;
+   padding-right: 10px;
+}
 
 .title-section{
     color: white;
@@ -53,8 +87,53 @@ section{
     align-items: center;
     justify-content: center;
     gap: 0px;
-    flex-grow: 1;
-    display: none;
+    flex-grow: 0.7;
 }
+.title-section > .container-title >  h1{
+    font-size: 50px;
+    margin: 0;
+}
+
+.title-section > .container-title > span{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    color: #00C299;
+}
+
+.container-text-account{
+    margin-top: 25px;
+}
+
+.textAccount{
+    color: #676767;
+    margin-right: 10px;
+}
+
+.actionAccount{
+    color: #00C299;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.actionAccount:hover{
+    color: #51d2b6;
+}
+.actionAccount:active{
+    color: #1d463d;
+}
+
+
+
+@media (max-width: 768px) {
+    .title-section{
+        display: none;
+    }
+
+    .form-section > .container-form{
+        width: 85%;
+    }
+}
+
+
 
 

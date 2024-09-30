@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { DefaultLayoutAuthComponent } from "../../../components/default-layout-auth/default-layout-auth.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [DefaultLayoutAuthComponent, ReactiveFormsModule],
+  imports: [DefaultLayoutAuthComponent, ReactiveFormsModule, PrimaryInputComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent {
+export class RegisterComponent{
   titleRegister: string = "Crie a sua conta";
   btnRegister: string = "Registre a sua conta";
   btnGoogleRegister: string = "Registre com o Google";
@@ -26,4 +27,8 @@ export class RegisterComponent {
     });    
   }
 
+  submit(){
+    console.log(this.registerForm.value);
+  }
+  
 }

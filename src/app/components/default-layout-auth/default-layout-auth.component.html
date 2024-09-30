@@ -1,17 +1,32 @@
 <main>
     <section class="title-section">
-        <h1>Bem vindo ao <span>FOCCO</span></h1>
+        <div class="container-title">
+            <h1>{{titlePrimary}}</h1>
+            <span>{{titleSecondary}}</span>
+            <p style="color: gray;">Seu app para armazenar, organizar e melhorar suas financas!</p>
+        </div>
     </section>
     <section class="form-section">
-        <h1>{{title}}</h1>
-        <ng-content></ng-content>
-        <button class="primary-button">{{ primaryBtn }}</button>
-        <div>
-            <span style="color: white">Forgot password? <span> dsd</span></span>
-        </div>
-        <div class="auth-apps">
-            <button>{{btnGoogle}}</button>
-            <button>{{btnGitHub }}</button>
+        <div class="container-form">
+            <h1>{{title}}</h1>
+            <ng-content></ng-content>
+            <button class="primary-button" 
+                    (click)="submit()" 
+                    type="submit">{{ primaryBtn }} 
+                <i  class="fa fa-arrow-right arrow-style" 
+                    style="background-color: transparent;">
+                </i>
+            </button>
+            <div class="auth-apps">
+                <button><i class="fa-brands fa-google github-style"></i>{{ btnGoogle }}</button>
+                <button><i class="fa-brands fa-github google-style"></i>{{ btnGitHub }}</button>
+            </div>
+            <div class="container-text-account">
+                <span class="textAccount">{{textAccount}}</span> 
+                <span class="actionAccount">{{actionAccount}}</span>
+            </div>
         </div>
     </section>
 </main>
+
+<script src="https://kit.fontawesome.com/4fd3334b70.js" crossorigin="anonymous"></script>

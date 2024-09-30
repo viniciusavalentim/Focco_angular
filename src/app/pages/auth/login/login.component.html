@@ -1,37 +1,25 @@
-<div class="todo-conteudo">
-    <div>
-        <header>
-            <h1 class="title-welcome">Bem vindo ao FOCCO</h1>
-            <p class="subtitle-welcome">Faça seu registro e aproveite uma plataforma repleta de ferramentas e
-                funcionalidades. Com o Focco o seu dinheiro fica bem organizado!</p>
-        </header>
-        <main>
-            <section>
-                <div class="container">
-                    <div class="sub-content">
-                        <div class="input-group">
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Senha">
-                            <input type="password" placeholder="Confirmar senha">
-                        </div>
-                        <div class="actions">
-                            <button>Faça o registro da sua conta <i class="fa fa-arrow-right arrow-style"></i></button>
-                        </div>
-                        <div class="text-account">
-                            <div>
-                                <p>Já possui conta? <span class="login-link">Log in</span></p>
-                            </div>
-                        </div>
-                        <div class="social-register">
-                            <button><i class="fa-brands fa-github github-style"></i>Register with GitHub</button>
-                            <button><i class="fa-brands fa-google google-style"></i>Register with Google</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-</div>
+<app-default-layout-auth 
+    title="Entre na sua conta"
+    primaryBtn="Entre com a sua conta"
+    btnGoogle="Logar com o Google"
+    btnGitHub="Logar com o GitHub"
+    textAccount="Ainda não tem uma conta?"
+    actionAccount="Crie aqui"
+    titlePrimary="Olá,"
+    titleSecondary="Novamente!"
+    (submit)="submit()"
+>
+    <form [formGroup]="LoginForm" autocomplete="off">
+         <app-primary-input
+            placeholder="Email"
+            type="email"
+            formControlName="email"
+         ></app-primary-input>
 
-<script src="https://kit.fontawesome.com/4fd3334b70.js" crossorigin="anonymous"></script>
+         <app-primary-input
+            placeholder="Senha"
+            type="password"
+            formControlName="password"
+         ></app-primary-input>
+    </form>
+</app-default-layout-auth>

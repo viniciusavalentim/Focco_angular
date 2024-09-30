@@ -3,8 +3,35 @@
     [primaryBtn]="btnRegister"
     [btnGoogle]="btnGoogleRegister"
     [btnGitHub]="btnGitHubRegister"
+    textAccount="Já tem uma conta?"
+    actionAccount="Conecte-se"
+    titlePrimary="Seja bem vindo ao"
+    titleSecondary="FOCCO"
+    (submit)="submit()"
 >
-    <form [formGroup]="registerForm">
-         
+    <form [formGroup]="registerForm" autocomplete="off">
+         <app-primary-input
+            placeholder="Usuário"
+            type="text"
+            formControlName="user"
+         ></app-primary-input>
+
+         <app-primary-input
+            placeholder="Email"
+            type="email"
+            formControlName="email"
+         ></app-primary-input>
+
+         <app-primary-input
+            placeholder="Senha"
+            type="password"
+            formControlName="password"
+         ></app-primary-input>
+
+         <app-primary-input
+            placeholder="Confirme sua senha"
+            type="password"
+            formControlName="confirmPassword"
+         ></app-primary-input>
     </form>
 </app-default-layout-auth>
