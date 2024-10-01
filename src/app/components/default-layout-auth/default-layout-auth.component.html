@@ -1,8 +1,8 @@
 <main>
     <section class="title-section">
         <div class="container-title">
-            <h1>{{titlePrimary}}</h1>
-            <span>{{titleSecondary}}</span>
+            <h1 class="animate-title" id="first-title">{{titlePrimary}}</h1>
+            <h1 class="animate-title" id="second-title">{{titleSecondary}}.</h1>
             <p style="color: gray;">Seu app para armazenar, organizar e melhorar suas financas!</p>
         </div>
     </section>
@@ -23,10 +23,11 @@
             </div>
             <div class="container-text-account">
                 <span class="textAccount">{{textAccount}}</span> 
-                <span class="actionAccount">{{actionAccount}}</span>
+                <a class="actionAccount" (click)="navigate()">{{actionAccount}}</a>
             </div>
         </div>
     </section>
 </main>
 
 <script src="https://kit.fontawesome.com/4fd3334b70.js" crossorigin="anonymous"></script>
+

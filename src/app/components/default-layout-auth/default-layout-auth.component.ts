@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-default-layout-auth',
@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './default-layout-auth.component.html',
   styleUrl: './default-layout-auth.component.css'
 })
-export class DefaultLayoutAuthComponent {
+export class DefaultLayoutAuthComponent{
   @Input() title: string = '';
   @Input() primaryBtn: string = '';
   @Input() btnGoogle: string = '';
@@ -18,9 +18,14 @@ export class DefaultLayoutAuthComponent {
   @Input() titlePrimary: string = '';
 
   @Output("submit") onSubmit = new EventEmitter();
+  @Output("navigate") onNavigate = new EventEmitter();
 
   submit(){
     this.onSubmit.emit();
+  }
+
+  navigate(){
+    this.onNavigate.emit();
   }
 
 

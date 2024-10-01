@@ -50,7 +50,21 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 1s ease; 
 }
+
+
+.form-section > .container-form > button:hover {
+    background: linear-gradient(90deg, rgba(0,194,153,0.8) 0%, rgba(97,199,135,0.8) 56%, rgba(226,205,113,0.8) 100%); 
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 194, 153, 0.2); 
+  }
+  
+  .form-section > .container-form > button:active {
+    background: linear-gradient(90deg, rgba(0,194,153,0.6) 0%, rgba(97,199,135,0.6) 56%, rgba(226,205,113,0.6) 100%); 
+    backdrop-filter: blur(8px); 
+    background-color: rgba(0, 194, 153, 0.3); 
+  }
 
 .form-section > .container-form > button > i{
     margin-right: 15px;
@@ -73,12 +87,35 @@ section{
     font-size: 11px;
     border: 1px solid transparent;
     border-image: linear-gradient(to right, rgba(0,194,153,1), rgba(226,205,113,1)) 1; 
+    transition: background-image 0.5s ease;
 
 }
+
+
 .form-section > .container-form > .auth-apps > button > i{
    font-size: 23px;
    padding-right: 10px;
 }
+
+/* .animate-title{
+    font-size: 5em;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(4444), cursor .4s step-end infinite alternate;
+}
+
+
+@keyframes cursor{
+    50% { border-color: transparent;}
+}
+
+@keyframes typing {
+   from {width: 0;} 
+} */
+
+
 
 .title-section{
     color: white;
@@ -94,7 +131,7 @@ section{
     margin: 0;
 }
 
-.title-section > .container-title > span{
+.title-section > .container-title > #second-title{
     font-size: 50px;
     font-weight: bold;
     margin: 0;
@@ -122,6 +159,31 @@ section{
     color: #1d463d;
 }
 
+@media (max-width: 1498px) {
+
+    .form-section > .container-form{
+        width: 65%;
+    }
+}
+
+@media (max-width: 1120px) {
+
+    .form-section > .container-form{
+        width: 75%;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .title-section{
+        display: none;
+    }
+
+
+    .form-section > .container-form{
+        width: 45%;
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -130,9 +192,22 @@ section{
     }
 
     .form-section > .container-form{
-        width: 85%;
+        width: 75%;
     }
 }
+
+
+@media (max-width: 460px) {
+    .title-section{
+        display: none;
+    }
+
+    .form-section > .container-form{
+        width: 90%;
+    }
+}
+
+
 
 
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { DefaultLayoutAuthComponent } from '../../../components/default-layout-auth/default-layout-auth.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
@@ -13,17 +13,22 @@ import { PrimaryInputComponent } from '../../../components/primary-input/primary
 })
 export class LoginComponent {
 
+
   LoginForm!: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
     this.LoginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });    
   }
-
+  
   submit(){
 
+  }
+
+  navigate(){
+    this.router.navigate(["register"]);
   }
 
 }
