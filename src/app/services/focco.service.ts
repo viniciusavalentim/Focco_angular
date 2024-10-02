@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { userLogin } from '../models/userLogin';
 import { response } from '../models/response';
+import { userRegister } from '../models/userRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class FoccoService {
 
   constructor(private http: HttpClient) { }
 
- /*  public register(user: user): Observable<any>{
-    return this.http.post<any>(`${this.ApiUrl}/register`, user);
-  } */
+  public register(user: userRegister): Observable<response>{
+    return this.http.post<response>(`${this.ApiUrl}/register`, user);
+  }
 
   public login(user: userLogin): Observable<response>{
     return this.http.post<response>(`${this.ApiUrl}/login`, user)

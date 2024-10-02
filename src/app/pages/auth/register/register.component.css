@@ -3,3 +3,7 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+*{
+    background-color: #181B20;
+}

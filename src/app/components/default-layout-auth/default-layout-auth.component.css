@@ -1,3 +1,7 @@
+*{
+    background-color: #181B20;
+}
+
 main{
     display: flex;
     flex-direction: row;

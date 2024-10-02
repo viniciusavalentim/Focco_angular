@@ -3,6 +3,8 @@ import { DefaultLayoutAuthComponent } from "../../../components/default-layout-a
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
+import { FoccoService } from '../../../services/focco.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +21,7 @@ export class RegisterComponent{
 
   registerForm!: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: FoccoService, private toastService: ToastrService) {
     this.registerForm = new FormGroup({
       user: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -29,9 +31,28 @@ export class RegisterComponent{
   }
 
   submit(){
-    console.log(this.registerForm.value);
+    this.auth.register(this.registerForm.value).subscribe({
+      next: (data) =>{
+        const token = data.data;
+          localStorage.setItem('token', token);
+          this.router.navigate(["dashboard"]);
+      },
+      error: (error) => {
+        const erro = error.error.errors;
+        console.log(erro)
+        if(erro.Email){
+          this.toastService.error(erro.Email[0]);
+        }else if(erro.User){
+          this.toastService.error(erro.User[0]);
+        }else if(erro.Password){
+          this.toastService.error(erro.Password[0]);
+        }else{
+          this.toastService.error(erro.ConfirmPassword[0]);
+        }
+
+      }
+    })
   }
-  
   
   navigate(){
     this.router.navigate(["login"]);
