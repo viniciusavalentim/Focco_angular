@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, RouterOutlet } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -7,7 +7,8 @@ import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common
 import { FormsModule } from '@angular/forms';
 import { jwtInterceptor } from './services/auth.interceptor';
 import { provideToastr } from 'ngx-toastr';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { loadingInterceptor } from './core/interceptor/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,8 +16,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideClientHydration(),
     provideHttpClient(withInterceptors([jwtInterceptor])),
+    provideHttpClient(withInterceptors([loadingInterceptor])),
     provideAnimations(),
     provideToastr(),
+    importProvidersFrom([BrowserAnimationsModule]),
     HttpClient,
     FormsModule,
   ]

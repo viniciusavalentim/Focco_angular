@@ -26,6 +26,7 @@ export class LoginComponent {
   }
 
   submit() {
+
     this.auth.login(this.LoginForm.value).subscribe({
       next: (data) => {
         this.toastService.clear();
@@ -46,6 +47,8 @@ export class LoginComponent {
             this.toastService.error(erro.Email[0]);
           } else if (erro.Password?.length) {
             this.toastService.error(erro.Password[0]);
+          }else{
+            this.toastService.error("Não foi possível realizar o login");
           }
         }
 

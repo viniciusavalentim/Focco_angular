@@ -13,11 +13,5 @@ export class DashboardComponent {
   /**
    *
    */
-  constructor(private auth: FoccoService) { 
-  }
 
-
-  logout(){
-    this.auth.logout();
-  }
 }
