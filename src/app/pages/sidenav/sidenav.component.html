@@ -3,14 +3,17 @@
   <div class="logo-container">
     <div class="logo-text" *ngIf="collapsed">FOCCO</div>
     <div class="logo" *ngIf="!collapsed" (click)="toggleCollapsed()">F</div>
-    <button class="btn-close" *ngIf="collapsed" (click)="toggleCollapsed()">
+    <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
       <i class="fa fa-angle-left close-icon"></i>
-    </button>
+    </button> 
   </div>
 
   <ul class="sidenav-nav">
     <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a href="" class="sidenav-nav-link" [routerLink]="[data.routerLink]">
+      <a href="" class="sidenav-nav-link" [routerLink]="[data.routerLink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+      >
         <i class="sidenav-link-icon" [class]="data.icon"></i>
         <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
       </a>

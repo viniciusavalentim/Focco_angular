@@ -1,9 +1,9 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { navbarData } from './nav-data';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-interface SideNavToggle{
+interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
 }
@@ -11,26 +11,52 @@ interface SideNavToggle{
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, RouterLinkActive],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
+  @Input() cancelSideNav!: boolean;
 
-  collapsed = true;
+  collapsed = false;
   screenWidth = 0;
   navData = navbarData;
-  
+
   constructor() { }
 
-  ngOnInit() {
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 768) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    }
   }
 
-  toggleCollapsed(){
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['cancelSideNav'] && changes['cancelSideNav'].currentValue !== null) {
+      if (this.screenWidth <= 768 && this.collapsed == true) {
+        this.collapsed = !this.collapsed;
+        this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+      }
+    }
+  }
+
+  toggleCollapsed() {
     this.collapsed = !this.collapsed;
-    this,this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+  }
+
+  closeSidenav() {
+    this.collapsed = false;
+    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+
   }
 
 }

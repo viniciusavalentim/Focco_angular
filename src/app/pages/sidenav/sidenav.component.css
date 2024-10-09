@@ -6,9 +6,11 @@
     top: 0;
     width: 5rem;
     height: 100vh;
-    box-shadow: 0.63rem 0 1.25rem 0 #181B20;
+    -webkit-box-shadow: 0px 4px 40px 5px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: 0px 4px 40px 5px rgba(0, 0, 0, 0.58);
+    box-shadow: 0px 4px 40px 5px rgba(0, 0, 0, 0.58);
     border-radius: 0px 0.625rem 0.625rem 0px;
-
+    overflow: hidden;  
 }
 
 /*----------------------------------------Parte da logo----------------------------------------*/
@@ -97,13 +99,30 @@
 
 .sidenav-nav>.sidenav-nav-item>.sidenav-nav-link>span {
     margin-left: 0.3rem;
-    font-size: 19px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 200;
 }
 
 .sidenav-nav>.sidenav-nav-item>.sidenav-nav-link:hover {
-    background-color: white;
+    background: rgb(0, 194, 153);
+    background: linear-gradient(180deg, rgba(0, 194, 153, 1) 2%, rgba(97, 199, 135, 1) 44%, rgba(226, 205, 113, 1) 100%);
     color: black;
 }
 
 /*-------------------------------------------------------------------------------------------------*/
+.sidenav-nav-item .sidenav-nav-link.active {
+    position: relative;
+}
+
+.sidenav-nav-item .sidenav-nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 90%;
+    background: rgb(0, 194, 153);
+    background: linear-gradient(180deg, rgba(0, 194, 153, 1) 2%, rgba(97, 199, 135, 1) 44%, rgba(226, 205, 113, 1) 100%);
+    z-index: -1;
+}

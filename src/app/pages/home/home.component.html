@@ -1,1 +1,4 @@
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<div class="body">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)" [cancelSideNav]="cancelSideNav"></app-sidenav>
+    <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" (click)="onComponentClick($event)"></app-body>
+</div>

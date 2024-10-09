@@ -35,7 +35,7 @@ export class RegisterComponent{
       next: (data) =>{
         const token = data.data;
           localStorage.setItem('token', token);
-          this.router.navigate(["dashboard"]);
+          this.router.navigate(["home/dashboard"]);
       },
       error: (error) => {
         const erro = error.error.errors;

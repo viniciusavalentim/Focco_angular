@@ -33,7 +33,7 @@ export class LoginComponent {
         const token = data.data;
         this.toastService.success("Logado com sucesso!");
         localStorage.setItem('token', token);
-        this.router.navigate(["dashboard"]);
+        this.router.navigate(["home/dashboard"]);
       },
       error: (error) => {
         this.toastService.clear();
