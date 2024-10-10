@@ -1,17 +1,25 @@
-<div class="w-80">
-    <div class="row header-line">
-        <div class="col-md-2">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <div>
-                <button class="btn btn-outline-primary"></button>
+<div class="">
+    <div class="d-flex justify-content-end align-items-center">
+        <div class="form-group mr-3 month-select">
+            <div class="form-group select-with-icon">
+                <select class="form-control" id="select-with-icons" [(ngModel)]="currentMonth">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outrubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
             </div>
+        </div>
+        <div class="btn-user">
+            <button class="bg-white"><i class="fa fa-user"></i></button>
         </div>
     </div>
     <div class="row mt-5">
@@ -29,7 +37,7 @@
         <div class="col-md-3">
             <div class="first-cards"> </div>
         </div>
-        
+
     </div>
     <div class="row mt-4">
         <div class="col-md-6">
@@ -49,11 +57,17 @@
             <div class="third-cards">
             </div>
         </div>
-
-        <div class="col-md-1">
-            <div class="">
-                <button class="btn btn-outline-primary">+</button>
+    </div>
+    <div class="box">
+        <div class="dropdown btn-add-transaction">
+            <i class="fa-solid fa-plus"></i>
+            <div class="items">
+                <a href="#" style="--i:1;"><i class="fa-solid fa-sack-dollar" style="color: rgba(234, 205, 77, 0.8);  margin-right: 10px;"></i>Investimentos</a>
+                <a href="#" style="--i:2;"><i class="fa-solid fa-plus" style="color: rgb(45, 140, 45); margin-right: 10px;"></i> Receita</a>
+                <a href="#" style="--i:3;"><i class="fa-solid fa-minus" style="color: rgb(186, 61, 61);  margin-right: 10px;"></i> Despesa</a>
             </div>
         </div>
     </div>
+    
+
 </div>

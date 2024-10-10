@@ -6,17 +6,21 @@ h1 {
 .card-teste {
     display: flex;
     flex-direction: column;
+
 }
 
+
 .first-cards {
-    background: rgba(0, 194, 153, 0.8); /* 80% opaco */
-    background: linear-gradient(90deg, rgba(0, 194, 153, 0.8) 2%, rgba(97, 199, 135, 0.8) 44%, rgba(234, 205, 77, 0.8) 100%);
+    /* background: rgba(0, 194, 153, 0.8); */
+    /* 80% opaco */
+    /* background: linear-gradient(90deg, rgba(0, 194, 153, 0.8) 2%, rgba(97, 199, 135, 0.8) 44%, rgba(234, 205, 77, 0.8) 100%); */
+    background-color: #181B20;
     margin: 8px;
     height: 150px;
     display: flex;
     justify-content: center;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 6px;
     -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
@@ -29,7 +33,7 @@ h1 {
     display: flex;
     justify-content: center;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 6px;
     -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
@@ -42,8 +46,187 @@ h1 {
     display: flex;
     justify-content: center;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 6px;
     -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+}
+
+.month-select {
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(0, 194, 153, 1), rgba(226, 205, 113, 1)) 1;
+    border-radius: 16px;
+}
+
+.select-with-icon {
+    position: relative;
+    -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+    padding: 10px;
+    border-radius: 16px;
+
+}
+
+.select-with-icon select {
+    padding-left: 40px;
+    border: none;
+    color: #F5F5F5;
+    background-color: #181B20;
+    width: 9.5rem;
+    font-weight: 200;
+    text-decoration: none;
+
+}
+
+.select-with-icon::before {
+    content: "\f073";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #F5F5F5;
+    padding: 0px 10px;
+
+}
+
+.select-with-icon::after {
+    content: "\f078";
+    padding: 0px 10px;
+
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #F5F5F5;
+
+}
+
+.select-with-icon:focus {
+    outline: none;
+}
+
+
+.select-with-icon select:focus {
+    outline: none;
+}
+
+
+.btn-user {
+    margin-left: 40px;
+}
+
+.btn-user>button {
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border: none;
+    color: gray;
+}
+
+.btn-add-transaction {
+    position: fixed;
+    width: 54px;
+    height: 54px;
+    bottom: 46px;
+    right: 54px;
+    border-radius: 50%;
+    border: none;
+    color: #181B20;
+    background: linear-gradient(90deg, rgba(0, 194, 153, 0.8) 2%, rgba(97, 199, 135, 0.8) 44%, rgba(234, 205, 77, 0.8) 100%);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.box-btn-add {
+    position: static;
+}
+
+.box {
+    position: relative;
+}
+
+.dropdown {
+    position: fixed;
+    bottom: 39px;
+    right: 54px;
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .items {
+    position: absolute;
+    margin-bottom: 20px;
+    bottom: 100%;
+    right: 0;
+    width: 250px;
+    height: auto;
+    overflow: hidden;
+    visibility: hidden;
+    transition: .5s;
+    z-index: 1000;
+}
+
+.dropdown.active .items {
+    visibility: visible;
+}
+
+.dropdown .items a {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    background-color: #222222;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 17px 15px;
+    margin-bottom: 8px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .2s;
+    transition-delay: calc(60ms * var(--i));
+    width: 100%;
+}
+
+.dropdown.active .items a {
+    transform: translateX(0);
+}
+
+.dropdown .items a {
+    transform: translateX(100%);
+}
+
+.dropdown .items a:hover {
+    color: white;
+}
+
+.dropdown .items a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 0 10px;
+}
+
+
+@media (max-width: 768px) {
+    .btn-add-transaction {
+        bottom: 39px;
+        right: 45px;
+    }
 }

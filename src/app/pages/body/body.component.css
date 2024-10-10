@@ -9,6 +9,8 @@
     background-color: #181B20;
     padding: 3rem;
     box-sizing: border-box;
+    overflow: auto;
+
 }
 
 .body-trimmed{
