@@ -34,6 +34,7 @@ section{
 
 .form-section > .container-form >  h1{
     font-weight: bold;
+    font-size: 30px;
     color: white;
     padding: 0px 25px;
 }

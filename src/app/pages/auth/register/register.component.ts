@@ -5,15 +5,16 @@ import { PrimaryInputComponent } from '../../../components/primary-input/primary
 import { Router } from '@angular/router';
 import { FoccoService } from '../../../services/focco.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [DefaultLayoutAuthComponent, ReactiveFormsModule, PrimaryInputComponent],
+  imports: [DefaultLayoutAuthComponent, ReactiveFormsModule, PrimaryInputComponent, NgxSpinnerModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent{
+export class RegisterComponent {
   titleRegister: string = "Crie a sua conta";
   btnRegister: string = "Registre a sua conta";
   btnGoogleRegister: string = "Registre com o Google";
@@ -21,40 +22,51 @@ export class RegisterComponent{
 
   registerForm!: FormGroup;
 
-  constructor(private router: Router, private auth: FoccoService, private toastService: ToastrService) {
+  constructor(private router: Router, private auth: FoccoService, private toastService: ToastrService, private spinner: NgxSpinnerService) {
     this.registerForm = new FormGroup({
       user: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required,Validators.minLength(6)]),
-    });    
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    });
   }
 
-  submit(){
+  submit() {
+
+    this.spinner.show();
+    const minSpinnerDisplayTime = 1000;
+    const hideSpinnerAfterDelay = setTimeout(() => {
+      this.spinner.hide();
+    }, minSpinnerDisplayTime);
+
+
     this.auth.register(this.registerForm.value).subscribe({
-      next: (data) =>{
+      next: (data) => {
         const token = data.data;
-          localStorage.setItem('token', token);
-          this.router.navigate(["home/dashboard"]);
+        localStorage.setItem('token', token);
+        this.router.navigate(["home/dashboard"]);
+
+        clearTimeout(hideSpinnerAfterDelay);
+        this.spinner.hide();
       },
       error: (error) => {
         const erro = error.error.errors;
         console.log(erro)
-        if(erro.Email){
+        if (erro.Email) {
           this.toastService.error(erro.Email[0]);
-        }else if(erro.User){
+        } else if (erro.User) {
           this.toastService.error(erro.User[0]);
-        }else if(erro.Password){
+        } else if (erro.Password) {
           this.toastService.error(erro.Password[0]);
-        }else{
+        } else {
           this.toastService.error(erro.ConfirmPassword[0]);
         }
-
+        this.spinner.hide();
       }
     })
   }
-  
-  navigate(){
+
+  navigate() {
     this.router.navigate(["login"]);
   }
 }

@@ -24,9 +24,22 @@ export class FoccoService {
     return this.http.post<response>(`${this.ApiUrl}/login`, user)
   }
 
-  public getTransactions(): Observable<response>{
-    return this.http.get<response>(`${this.ApiUrlTransactions}/Transactions/All`)
+  public getAllTransactions(date: string): Observable<response>{
+    return this.http.get<response>(`${this.ApiUrlTransactions}/Transactions/all/${date}`)
   }
+
+  public getCashFLow(id:number, date: string): Observable<response>{
+    return this.http.get<response>(`${this.ApiUrlTransactions}/Transactions/cashflow/${id}/${date}`);
+  }
+
+  public getCurrentBalance(date: string): Observable<response>{
+    return this.http.get<response>(`${this.ApiUrlTransactions}/Transactions/balance/${date}`)
+  }
+
+  public getUser(): Observable<string> {
+    return this.http.get<string>(`${this.ApiUrlTransactions}/Transactions/user`, { responseType: 'text' as 'json' });
+  }
+
 
   public logout(): void{
     localStorage.removeItem(`token`);

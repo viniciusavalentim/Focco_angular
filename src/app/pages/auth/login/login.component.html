@@ -1,4 +1,8 @@
-<app-default-layout-auth 
+<ngx-spinner type="ball-clip-rotate-multiple">
+    <p style="color: white; background-color: transparent;">carregando...</p>
+</ngx-spinner>
+  
+  <app-default-layout-auth
     title="Entre na sua conta"
     primaryBtn="Entre com a sua conta"
     btnGoogle="Logar com o Google"
@@ -9,19 +13,19 @@
     titleSecondary="Novamente!"
     (submit)="submit()"
     (navigate)="navigate()"
->
+  >
     <form [formGroup]="LoginForm" autocomplete="off">
-         <app-primary-input
-            placeholder="Email"
-            type="email"
-            formControlName="email"
-         ></app-primary-input>
-
-         <app-primary-input
-            placeholder="Senha"
-            type="password"
-            formControlName="password"
-         ></app-primary-input>
+      <app-primary-input
+        placeholder="Email"
+        type="email"
+        formControlName="email"
+      ></app-primary-input>
+  
+      <app-primary-input
+        placeholder="Senha"
+        type="password"
+        formControlName="password"
+      ></app-primary-input>
     </form>
-</app-default-layout-auth>
-
+  </app-default-layout-auth>
+  
