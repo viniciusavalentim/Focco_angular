@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     { id: 5, name: "Serviços de Internet", description: "Pagamento mensal do serviço de internet", value: this.formatToBRL(99.90), createat: "Out 2024 20:00", cashflow: 1 }
   ];
 
-  qauntityTransactions:number = this.transactions.length;
+  quantityTransactions:number = this.transactions.length;
 
   constructor(private focco: FoccoService, private spinner: NgxSpinnerService ,private cdr: ChangeDetectorRef) {
     this.currentMonth = new Date().getMonth() + 1;
