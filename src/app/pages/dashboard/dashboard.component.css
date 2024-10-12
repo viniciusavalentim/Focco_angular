@@ -1,261 +1,317 @@
 div,
 h1 {
-    color: #F5F5F5;
+  color: #f5f5f5;
 }
 
 .card-teste {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
-
 .first-cards {
-    background-color: #181B20;
-    margin: 8px;
-    height: 150px;
-    border-radius: 6px;
-    -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  background-color: #181b20;
+  margin: 8px;
+  height: 150px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
 }
 
 .second-cards {
-    background-color: #181B20;
-    margin: 8px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    border-radius: 6px;
-    -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  background-color: #181b20;
+  margin: 8px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
 }
-
 .third-cards {
-    background-color: #181B20;
-    margin: 8px;
-    height: 210px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    border-radius: 6px;
-    -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  background-color: #181b20;
+  margin: 8px;
+  height: 350px;
+  padding: 21px 10px 21px 21px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
 }
 
-.currentTotalValue>h2 {
-    background: linear-gradient(90deg, rgb(0, 194, 152) 2%, rgb(97, 199, 134) 44%, rgba(234, 205, 77, 0.998) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: bold;
+.third-body {
+  height: calc(100% - 45px); 
+  overflow: auto; 
+  scrollbar-width: thin; 
+}
+.fa-wallet{
+  background: linear-gradient(
+    90deg,
+    rgb(0, 194, 152) 2%,
+    rgb(97, 199, 134) 44%,
+    rgba(234, 205, 77, 0.998) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  margin-right: 7px;
 }
 
+.fa-ellipsis-h{
+  cursor: pointer;
+}
+
+.fa-ellipsis-h:active{
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.third-body::-webkit-scrollbar {
+  width: 12px; 
+  height: 12px; 
+}
+
+.third-body::-webkit-scrollbar-thumb {
+  background: rgb(0, 194, 153);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 194, 153, 1) 2%,
+    rgba(97, 199, 135, 1) 44%,
+    rgba(226, 205, 113, 1) 100%
+  );
+  border-radius: 6px;
+  border: 3px solid #181b20;
+}
+
+.third-body::-webkit-scrollbar-track {
+  background: #2d2f36;
+  border-radius: 6px;
+}
+
+
+.transactions-container {
+  padding-right: 10px; 
+}
+
+
+.currentTotalValue > h2 {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 194, 152) 2%,
+    rgb(97, 199, 134) 44%,
+    rgba(234, 205, 77, 0.998) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
 
 .month-select {
-    border: 1px solid transparent;
-    border-image: linear-gradient(to right, rgba(0, 194, 153, 1), rgba(226, 205, 113, 1)) 1;
-    border-radius: 16px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      rgba(0, 194, 153, 1),
+      rgba(226, 205, 113, 1)
+    )
+    1;
+  border-radius: 16px;
 }
 
 .select-with-icon {
-    position: relative;
-    -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
-    padding: 10px;
-    border-radius: 16px;
-
+  position: relative;
+  -webkit-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.71);
+  padding: 10px;
+  border-radius: 16px;
 }
 
-.select-with-icon>select {
-    padding-left: 40px;
-    border: none;
-    color: #F5F5F5;
-    background-color: #181B20;
-    width: 9.5rem;
-    font-weight: 200;
-    text-decoration: none;
-
+.select-with-icon > select {
+  padding-left: 40px;
+  border: none;
+  color: #f5f5f5;
+  background-color: #181b20;
+  width: 9.5rem;
+  font-weight: 200;
+  text-decoration: none;
 }
 
 .select-with-icon::before {
-    content: "\f073";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #F5F5F5;
-    padding: 0px 10px;
-
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #f5f5f5;
+  padding: 0px 10px;
 }
 
 .select-with-icon::after {
-    content: "\f078";
-    padding: 0px 10px;
+  content: "\f078";
+  padding: 0px 10px;
 
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #F5F5F5;
-
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #f5f5f5;
 }
 
 .select-with-icon:focus {
-    outline: none;
+  outline: none;
 }
-
 
 .select-with-icon select:focus {
-    outline: none;
+  outline: none;
 }
-
 
 .btn-user {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
-.btn-user>button {
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    border: none;
-    color: gray;
+.btn-user > button {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  color: gray;
 }
 
 .btn-add-transaction {
-    position: fixed;
-    width: 54px;
-    height: 54px;
-    bottom: 46px;
-    right: 54px;
-    border-radius: 50%;
-    border: none;
-    color: #181B20;
-    background: linear-gradient(90deg, rgba(0, 194, 153, 0.8) 2%, rgba(97, 199, 135, 0.8) 44%, rgba(234, 205, 77, 0.8) 100%);
-    z-index: 1000;
-    cursor: pointer;
+  position: fixed;
+  width: 54px;
+  height: 54px;
+  bottom: 46px;
+  right: 54px;
+  border-radius: 50%;
+  border: none;
+  color: #181b20;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 194, 153, 0.8) 2%,
+    rgba(97, 199, 135, 0.8) 44%,
+    rgba(234, 205, 77, 0.8) 100%
+  );
+  z-index: 1000;
+  cursor: pointer;
 }
 
 .box-btn-add {
-    position: static;
+  position: static;
 }
 
 .box {
-    position: relative;
+  position: relative;
 }
 
 .dropdown {
-    position: fixed;
-    bottom: 39px;
-    right: 54px;
-    width: 60px;
-    height: 60px;
-    font-size: 22px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  bottom: 39px;
+  right: 54px;
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown .items {
-    position: absolute;
-    margin-bottom: 20px;
-    bottom: 100%;
-    right: 0;
-    width: 250px;
-    height: auto;
-    overflow: hidden;
-    visibility: hidden;
-    transition: .5s;
-    z-index: 1000;
+  position: absolute;
+  margin-bottom: 20px;
+  bottom: 100%;
+  right: 0;
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 1000;
 }
 
 .dropdown.active .items {
-    visibility: visible;
+  visibility: visible;
 }
 
 .dropdown .items a {
-    position: relative;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    font-size: 20px;
-    color: white;
-    background-color: #222222;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 17px 15px;
-    margin-bottom: 8px;
-    z-index: 1;
-    overflow: hidden;
-    transition: .2s;
-    transition-delay: calc(60ms * var(--i));
-    width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  background-color: #222222;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 17px 15px;
+  margin-bottom: 8px;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.2s;
+  transition-delay: calc(60ms * var(--i));
+  width: 100%;
 }
 
 .dropdown.active .items a {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .dropdown .items a {
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .dropdown .items a:hover {
-    color: white;
+  color: white;
 }
 
 .dropdown .items a span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    padding: 0 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 0 10px;
 }
 
 .modal {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Fundo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fundo semi-transparente */
 }
 
 .show {
-    display: block;
-    /* Mostra o modal */
+  display: block;
+  /* Mostra o modal */
 }
 
-
-
 @media (max-width: 1400px) {
-    .custom-col {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+  .custom-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 @media (max-width: 800px) {
-    .custom-col {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+  .custom-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
-
 @media (max-width: 768px) {
-    .btn-add-transaction {
-        bottom: 39px;
-        right: 45px;
-    }
+  .btn-add-transaction {
+    bottom: 39px;
+    right: 45px;
+  }
 }

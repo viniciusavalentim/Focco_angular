@@ -5,6 +5,7 @@ import 'select2';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { Transactions } from '../../models/transaction';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,15 @@ export class DashboardComponent implements OnInit {
   currentEx?: string;
   currentInvest?: string;
   getUser?: string;
+  transactions: Transactions[] = [
+    { id: 1, name: "Compra de Café", description: "Compra de café na cafeteria local", value: this.formatToBRL(1115.50), createat: "Out 2024 20:00", cashflow: 3},
+    { id: 2, name: "Almoço de Negócios", description: "Almoço com cliente no restaurante", value: this.formatToBRL(120.00), createat: "Out 2024 15:00", cashflow: 2 },
+    { id: 3, name: "Compra de Material", description: "Compra de materiais para escritório", value: this.formatToBRL(45.75), createat: "Out 2024 20:00", cashflow: 1 },
+    { id: 4, name: "Transporte", description: "Gastos com transporte de táxi", value: this.formatToBRL(30.00), createat: "Out 2024 20:00", cashflow: 2 },
+    { id: 5, name: "Serviços de Internet", description: "Pagamento mensal do serviço de internet", value: this.formatToBRL(99.90), createat: "Out 2024 20:00", cashflow: 1 }
+  ];
+
+  qauntityTransactions:number = this.transactions.length;
 
   constructor(private focco: FoccoService, private spinner: NgxSpinnerService ,private cdr: ChangeDetectorRef) {
     this.currentMonth = new Date().getMonth() + 1;
@@ -29,7 +39,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.dropdown = document.querySelector('.dropdown');
-
     if (this.dropdown) {
       this.dropdown.addEventListener('click', () => {
         this.dropdown?.classList.toggle('active');
@@ -108,6 +117,23 @@ export class DashboardComponent implements OnInit {
       maximumFractionDigits: 2,
     });
   }
+
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+
+    const months = [
+        "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", 
+        "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+    ];
+
+    const month = months[date.getMonth()]; 
+    const year = date.getFullYear();       
+    const hours = date.getHours().toString().padStart(2, '0'); 
+    const minutes = date.getMinutes().toString().padStart(2, '0'); 
+
+    // Retorna a string formatada
+    return `${month} ${year} ${hours}:${minutes}`;
+}
 
 
 }
